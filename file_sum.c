@@ -14,6 +14,24 @@ int main()
     }
     fclose(f1);
     f1=fopen("file1.txt","r");
-    f2=fopen("file1.txt","w");
+    f2=fopen("file2.txt","w");
+    while(fscanf(f1,"%d",&num)==1)
+    {
+        int t=num;
+        int sum=0;
+        while(t>0)
+        {
+            sum+=t%10;
+            t/=10;
+        }
+        fprintf(f2,"%d \n",sum);
+    }
+    fclose(f1);
+    fclose(f2);
+    f2=fopen("file2.txt","r");
     
+    while(fscanf(f1,"%d",&num)==1)
+    {
+        printf("%d\n",num);
+    }
 }
