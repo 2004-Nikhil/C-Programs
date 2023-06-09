@@ -12,7 +12,7 @@ int main()
         fputc(ch,f);
     }
     fseek(f,-2l,1);
-    fprintf(f," %c",-1);
+    fputc(32,f);
     printf("Enter the serching word\n");
     gets(se);
     fclose(f);
