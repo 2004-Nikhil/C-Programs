@@ -1,42 +1,35 @@
 #include <stdio.h>
 #include <string.h>
-
 int main()
 {
     FILE *f;
-    char ch, st[100], se[100];
-    int i = 0, fr = 0;
-
-    printf("Enter the sentence:\n");
-    f = fopen("text.txt", "w");
-    while ((ch = getchar()) != EOF)
+    char ch,st[100],se[100];
+    int i=0,fr=0;
+    printf("Enter the sentence\n");
+    f=fopen("text.txt","w");
+    while((ch=getchar())!=EOF)
     {
-        fputc(ch, f);
+        fputc(ch,f);
     }
-    fputc(' ', f);
-    fclose(f);
-
-    printf("Enter the searching word:\n");
+    fseek(f,-2l,1);
+    fprintf(f," %c",-1);
+    printf("Enter the serching word\n");
     gets(se);
-
-    f = fopen("text.txt", "r");
-    while ((ch = getc(f)) != EOF)
+    fclose(f);
+    f=fopen("text.txt","r");
+    while((ch=getc(f))!=EOF)
     {
-        st[i++] = ch;
-        if (ch == 32)
+        st[i++]=ch;
+        if(ch==32)
         {
-            st[i] = '\0';
-            i = 0;
-            if (strcmp(st, se) == 0)
-                fr++;
+            st[i-1]='\0';
+            i=0;
+            if(strcmp(st,se)==0)
+            fr++;
         }
     }
-
-    if (fr)
-        printf("Word found and frequency is %d\n", fr);
+    if(fr)
+    printf("Word found and frequency is %d",fr);
     else
-        printf("Word not found\n");
-
-    fclose(f);
-    return 0;
+    printf("Word not found ");
 }
