@@ -54,4 +54,7 @@ int main()
     {
         printf("%d\n",num);
     }
+    fclose(fo);
+    fclose(fe);
+    fclose(fp);
 }
