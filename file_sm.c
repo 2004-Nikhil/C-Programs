@@ -10,7 +10,8 @@ int main()
     printf("Enter the lines .\n");
     while ((ch = getchar()) != EOF)
         fputc(ch, file);
-    fputc(32, file);
+    fseek(file,-2l,1);
+    fprintf(file," %c",-1);
     fclose(file);
     file = fopen("input.txt", "r");
     while ((ch = getc(file)) != EOF) 
@@ -27,6 +28,6 @@ int main()
         }
     }
     fclose(file);
-    printf("\nSmallest :%s",sw);
+    printf("Smallest :%s",sw);
     return 0;
 }
