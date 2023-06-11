@@ -10,14 +10,14 @@ int main()
     for (i=0;i<n;i++)
     {
         scanf("%d",&num);
-        fprintf(f1,"%d\n",num);
+        fprintf(f1,"%d ",num);
     }
     fclose(f1);
     f1=fopen("file1.txt","r");
     fe=fopen("file2.txt","w");
     fo=fopen("file3.txt","w");
     fp=fopen("file4.txt","w");
-    while(fscanf(f1,"%d",&num)==1)
+    while(fscanf(f1,"%d ",&num)==1)
     {
         if(num%2==0)
         fprintf(fe,"%d\n",num);
