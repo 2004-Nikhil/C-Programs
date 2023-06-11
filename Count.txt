@@ -1,3 +1,0 @@
-Characters: 19, Digits: 0
-Characters: 11, Digits: 4
-Characters: 7, Digits: 3
