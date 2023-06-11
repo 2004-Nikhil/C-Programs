@@ -12,14 +12,18 @@ int main() {
     file = fopen("input.txt", "r");
     while (fgets(line, sizeof(line), file)) 
     {
-        char *token;
+        char *token,c;
         token = strtok(line, " \n");
         while (token != NULL) 
         {
-            int length = strlen(token);
-            for (int i = length - 1; i >= 0; i--) 
-                printf("%c", token[i]);
-            printf(" ");
+            int l = strlen(token);
+            for (int i = 0; i <= l/2; i++) 
+                {
+                    c=token[i];
+                    token[i]=token[l-i-1];
+                    token[l-i-1]=c;
+                }
+            printf("%s ", token);
             token = strtok(NULL, " \n");
         }
         printf("\n");
