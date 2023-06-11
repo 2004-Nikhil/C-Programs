@@ -5,7 +5,7 @@ int main() {
     FILE *file;
     char ch,line[1000];
     file = fopen("input.txt", "w");
-    printf("Enter a paragraph (press Enter and then Ctrl+D to finish):\n");
+    printf("Enter a paragraph :\n");
     while((ch=getchar())!=EOF)
         fputc(ch,file);
     fclose(file);
