@@ -11,7 +11,6 @@ int main()
     {
         fputc(ch,f);
     }
-    fseek(f,-2l,1);
     fputc(32,f);
     printf("Enter the serching word\n");
     gets(se);
@@ -20,7 +19,7 @@ int main()
     while((ch=getc(f))!=EOF)
     {
         st[i++]=ch;
-        if(ch==32)
+        if(ch==32||ch=='\n')
         {
             st[i-1]='\0';
             i=0;
