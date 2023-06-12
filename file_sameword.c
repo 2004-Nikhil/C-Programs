@@ -11,7 +11,6 @@ int main()
     {
         fputc(ch,f);
     }
-    fputc(32,f);
     printf("Enter the serching word\n");
     gets(se);
     fclose(f);
